@@ -10,9 +10,9 @@
 5. Press "Register new application" button
 6. Provide:
 - Application name: Composer
-- Hompage URL: 
-- Application description: 
-- Authorization callback URL: 
+- Hompage URL: http://localhost:3000/
+- Application description: OAuth application for Composer
+- Authorization callback URL: http://localhost:3000/auth/github/callback
 and hit "Register application"
 7. Remember values
 ```
