@@ -1,0 +1,11 @@
+{
+  "name": "my-network",
+  "version": "2.0.0",
+  "description": "My first business network",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
