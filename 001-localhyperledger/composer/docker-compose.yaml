@@ -14,7 +14,7 @@ services:
     command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.org1.example.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/19ab65abbb04807dad12e4c0a9aaa6649e70868e3abd0217a322d89e47e1a6ae_sk -b admin:adminpw -d'
     volumes:
       - ./crypto-config/peerOrganizations/org1.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
-      - ./ca-db:/etc/hyperledger/fabric-ca-server
+#      - ./ca-db/fabric-ca-server.db:/etc/hyperledger/fabric-ca-server/fabric-ca-server.db
     container_name: ca.org1.example.com
 
   orderer.example.com:

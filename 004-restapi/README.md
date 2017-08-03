@@ -1,10 +1,10 @@
 ### run REST API server 
 ```
-# composer-rest-server -p hlfv1 -n my-network -i part1 -s RMEAROZVCAPy -N never
+# composer-rest-server -p hlfv1 -n my-network -i part1 -s ... -N never
 ```
 or
 ```
-# composer-rest-server -p hlfv1 -n my-network -i part2 -s jKIJIrfkAOEz -N never
+# composer-rest-server -p hlfv1 -n my-network -i part2 -s ... -N never
 ```
 now lets check what participant will be used to make transactions
 ```

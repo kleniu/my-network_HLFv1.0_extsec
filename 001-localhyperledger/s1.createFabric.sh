@@ -12,6 +12,9 @@ cd "${DIR}"/composer
 docker-compose -f "${DIR}"/composer/docker-compose.yaml down
 docker-compose -f "${DIR}"/composer/docker-compose.yaml up -d
 
+# cleanup
+# rm ca-db/fabric-ca-server.db
+
 # wait for Hyperledger Fabric to start
 # incase of errors when running later commands, issue export FABRIC_START_TIMEOUT=<larger number>
 export FABRIC_START_TIMEOUT=15

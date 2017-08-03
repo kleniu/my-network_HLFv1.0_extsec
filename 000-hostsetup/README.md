@@ -1,3 +1,7 @@
+### download setup script
+```
+curl -O https://hyperledger.github.io/composer/prereqs-ubuntu.sh
+```
 ### check version of required tools
 ```
 # git --version    ->>> git version 2.11.0 (Apple Git-81)
