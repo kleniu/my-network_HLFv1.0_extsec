@@ -1,0 +1,44 @@
+/**
+ * Sample access control list.
+ */
+rule SystemACL {
+    description:  "System ACL to permit all access"
+    participant: "org.hyperledger.composer.system.Participant"
+    operation: ALL
+    resource: "org.hyperledger.composer.system.**"
+    action: ALLOW
+}
+
+
+rule EverybodyCanReadEverything {
+    description: "Allow all participants read access to all resources"
+    participant: "org.poe.docOwner"
+    operation: READ
+    resource: "org.poe.*"
+    action: ALLOW
+}
+
+rule EverybodyCanSubmitTransactions {
+    description: "Allow all participants to submit transactions"
+    participant: "org.poe.docOwner"
+    operation: CREATE
+    resource: "org.poe.addDoc"
+    action: ALLOW
+}
+
+rule allHasFullAccess {
+    description: "Allow all participants to do enything"
+    participant: "org.poe.docOwner"
+    operation: ALL
+    resource: "org.poe.docAsset"
+    action: ALLOW
+}
+
+rule OwnerHasFullAccessToTheirAssets {
+    description: "Allow all participants full access to their assets"
+    participant(p): "org.poe.docOwner"
+    operation: ALL
+    resource(r): "org.poe.docAsset"
+    condition: (r.owner.getIdentifier() === p.ownerId()) 
+    action: ALLOW
+}

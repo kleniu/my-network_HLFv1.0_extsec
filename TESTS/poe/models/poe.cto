@@ -1,0 +1,28 @@
+/**
+ * POE business network definition.
+ */
+namespace org.poe
+
+asset docAsset identified by hash {
+  o String hash
+  --> docOwner owner
+  o String name
+  o String version
+  o String hashType
+  /* o DateTime time */
+}
+
+participant docOwner identified by ownerId {
+  o String ownerId
+  o String ownerName
+}
+
+transaction addDoc {
+  o String hash
+  --> docOwner owner
+  o String name
+  o String version
+  o String hashType
+  /* o DateTime time */
+}
+

@@ -1,0 +1,12 @@
+set -e
+../../001-localhyperledger/s5.deleteFabric.sh
+../../001-localhyperledger/s1.createFabric.sh
+../../001-localhyperledger/s2.createComposerProfile.sh 
+
+composer archive create --archiveFile poe-network.bna --sourceType dir --sourceName .
+composer network deploy --archiveFile poe-network.bna --connectionProfileName hlfv1 --enrollId PeerAdmin --enrollSecret ...
+
+composer participant add -p hlfv1 -n poe-network -i PeerAdmin -s ... -d '{"$class":"org.poe.docOwner","ownerId":"OWNER1","ownerName":"This is my doc owner"}'
+composer identity issue -p hlfv1 -n poe-network -i admin -s adminpw -u owner1 -a "org.poe.docOwner#OWNER1"
+
+#composer-rest-server -p hlfv1 -n poe-network -i owner1 -s prNoQWUfTbGD -N never

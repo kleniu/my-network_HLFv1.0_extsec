@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Exit on first error, print all commands.
-set -ev
+set -e
 
 # Grab the current directory
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -18,7 +18,7 @@ docker-compose -f "${DIR}"/composer/docker-compose.yaml up -d
 # wait for Hyperledger Fabric to start
 # incase of errors when running later commands, issue export FABRIC_START_TIMEOUT=<larger number>
 export FABRIC_START_TIMEOUT=15
-echo ${FABRIC_START_TIMEOUT}
+echo Waiting ${FABRIC_START_TIMEOUT} seconds for OSN ....
 sleep ${FABRIC_START_TIMEOUT}
 
 # Create the channel

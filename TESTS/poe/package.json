@@ -1,0 +1,11 @@
+{
+  "name": "poe-network",
+  "version": "1.0.0",
+  "description": "poe test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Info: no test specified\" && exit 1"
+  },
+  "author": "Robert Kleniewski",
+  "license": "private"
+}
